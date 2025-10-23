@@ -25,7 +25,7 @@ function Sliderintro() {
   return (
     <div className="w-full flex flex-col items-center mt-10">
       {/* Button Container */}
-      <div className="relative flex bg-[#1b1c1e] p-1 rounded-full">
+      <div className="relative flex bg-[#1b1c1e] p-1 rounded-[23px] w-[614px] h-[62px] items-center justify-between ">
         {[
           { id: "one", label: "About Me" },
           { id: "two", label: "Experiences" },
@@ -34,13 +34,13 @@ function Sliderintro() {
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className="relative px-5 py-2.5 text-sm font-medium text-gray-300 rounded-full transition-colors"
+            className="relative px-6 py-3.5 text-sm font-medium text-gray-300 rounded-[23px] transition-colors"
           >
             {/* Active sliding background */}
             {active === tab.id && (
               <motion.div
                 layoutId="active-pill"
-                className="absolute inset-0 bg-gray-700 rounded-full z-0"
+                className="absolute inset-0 bg-zinc-800 rounded-[23px] z-0 shadow-[13.49px_16.87px_67.47px_8.43px_#0a0a0a,-8.43px_-16.87px_50.6px_-16.87px_#485B71]  "
                 transition={{
                   type: "spring",
                   stiffness: 400,
@@ -50,7 +50,7 @@ function Sliderintro() {
             )}
 
             {/* Text — ensure it's above the motion div */}
-            <span className={`relative z-10 ${active === tab.id ? "text-white" : "text-gray-400"}`}>
+            <span className={`relative z-10 items-center align-middle text-[18px] rounded-[23px] ${active === tab.id ? "text-white" : "text-gray-400"}`}>
               {tab.label}
             </span>
           </button>
