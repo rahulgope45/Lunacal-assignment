@@ -34,13 +34,15 @@ function Sliderintro() {
           <button
             key={tab.id}
             onClick={() => setActive(tab.id)}
-            className="relative px-6 py-3.5 text-sm font-medium text-gray-300 rounded-[23px] transition-colors"
+            className="relative px-6 py-3.5 text-sm font-medium text-gray-300 rounded-[23px] transition-colors  group "
           >
+            <span className="absolute inset-0 bg-[#3a434e] scale-x-0 scale-x-0-50 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100  rounded-[23px] z-0"></span>
+
             {/* Active sliding background */}
             {active === tab.id && (
               <motion.div
                 layoutId="active-pill"
-                className="absolute inset-0 bg-zinc-800 rounded-[23px] z-0 shadow-[13.49px_16.87px_67.47px_8.43px_#0a0a0a,-8.43px_-16.87px_50.6px_-16.87px_#485B71]  "
+                className="absolute inset-0 bg-zinc-800 rounded-[23px] z-0 shadow-[13.49px_16.87px_67.47px_8.43px_#0a0a0a,-8.43px_-16.87px_50.6px_-16.87px_#485B71]   "
                 transition={{
                   type: "spring",
                   stiffness: 400,
@@ -48,9 +50,9 @@ function Sliderintro() {
                 }}
               />
             )}
-
+            
             {/* Text — ensure it's above the motion div */}
-            <span className={`relative z-10 items-center align-middle text-[18px] rounded-[23px] ${active === tab.id ? "text-white" : "text-gray-400"}`}>
+            <span className={`relative z-10 items-center align-middle text-[18px] rounded-[23px]  ${active === tab.id ? "text-white" : "text-gray-400"}`}>
               {tab.label}
             </span>
           </button>
