@@ -5,11 +5,21 @@ import Gallery from '../component/Gallery'
 
 function Home() {
   return (
-    <div>
+    <div className='flex items-center justify-between p-5 gap-5'>
         <div>
             <Emptybox/>
         </div>
-        <div>
+        <div className='relative'>
+          <img 
+          src="/endline.png"
+        alt="Decorative icon"
+        className="absolute top-[375px] right-[60px] w-[620px] h-[12px]"
+          />
+          <img 
+          src="/endline.png"
+        alt="Decorative icon"
+        className="absolute top-[745px] right-[60px] w-[620px] h-[12px]"
+          />
             <Sliderintro/>
             <Gallery/>
         </div>

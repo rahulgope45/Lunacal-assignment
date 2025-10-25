@@ -23,7 +23,7 @@ const scrollref = useRef(null);
 
 
   return (
-    <div className={`bg-[#363C43]  from-[#4A4E54] to-[#1b1c1e] w-[720px] h-[330px] rounded-[23px]  shadow-[5px_5px_5px_rgba(0,0,0,0.9)] relative ml-3 mt-[40px] mb-4`}>
+    <div className={`bg-[#363C43]  from-[#4A4E54] to-[#1b1c1e] w-[720px] h-[330px] rounded-[23px]  shadow-[5px_5px_5px_rgba(0,0,0,0.9)] relative  mt-[40px] mb-4`}>
 
       {/*placing all the icons here  */}
       <img
