@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../App.css'
 
 
 function Gallery() {
@@ -70,7 +71,7 @@ const handleFileChange = (e)=>{
           </div>
         </div>
 
-        <div className='mt-[48px] overflow-x-auto px-5 '>
+        <div className='mt-[48px] overflow-x-auto  hide-scrollbar px-5 '>
           {/* images */}
           <div className='flex gap-[16px] w-max items-center justify-center mx-auto'>
             {
