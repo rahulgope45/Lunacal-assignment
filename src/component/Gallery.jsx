@@ -21,9 +21,9 @@ function Gallery() {
       {/* Gallary */}
 
       <div>
-        <div className="flex items-center  px-10  gap-[174px]">
+        <div className="flex items-center  px-10  gap-[150px]">
           {/* Gallery Button */}
-          <div className="bg-black w-[149px] h-[42px] rounded-[20px] flex items-center justify-center p-7 mt-[20px]">
+          <div className="bg-black w-[149px] h-[42px] rounded-[20px] flex items-center justify-center p-7 mt-[20px] ml-1">
             <p className="text-white">Gallary</p>
           </div>
 
@@ -36,10 +36,10 @@ function Gallery() {
 
           {/* Arrows */}
           <div className="flex gap-2">
-            <div className="bg-black rounded-full w-[45px] h-[45px] flex items-center justify-center">
+            <div className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
               <i className="bi bi-arrow-left text-gray-500"></i>
             </div>
-            <div className="bg-black rounded-full w-[45px] h-[45px] flex items-center justify-center">
+            <div className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
               <i className="bi bi-arrow-right text-gray-500  "></i>
             </div>
           </div>
