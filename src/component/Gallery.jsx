@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import '../App.css'
 
 
@@ -18,6 +18,8 @@ const handleFileChange = (e)=>{
     setImages([...images, imgUrl]);
   }
 };
+
+const scrollref = useRef(null);
 
 
   return (
@@ -47,7 +49,7 @@ const handleFileChange = (e)=>{
 
           <div className='flex items-center justify-between gap-[37px] mr-[64px]'>
             {/* Add Button */}
-          <div className="w-[137px] h-[47px] bg-[#363C43] shadow-[5px_5px_5px_rgba(0,0,0,0.9)] rounded-[23px] flex items-center justify-center gap-2">
+          <div className="w-[137px] h-[47px] bg-[#363C43] shadow-[0px_-4px_8px_0px_rgba(255,255,255,0.4),0px_6px_12px_0px_rgba(0,0,0,0.6)] rounded-[23px] flex items-center justify-center gap-2">
             <i className="bi bi-plus text-white"></i>
             <label htmlFor="file-upload" className="cursor-pointer text-white z-10">Add</label>
             <input 
@@ -61,17 +63,21 @@ const handleFileChange = (e)=>{
 
           {/* Arrows */}
           <div className="flex gap-2">
-            <div className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
-              <i className="bi bi-arrow-left text-gray-500"></i>
+            <div 
+            onClick={()=> scrollref.current?.scrollBy({left: -200, behavior: 'smooth'})}
+            className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
+              <i className="bi bi-arrow-left text-gray-500 cursor-pointer "></i>
             </div>
-            <div className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
-              <i className="bi bi-arrow-right text-gray-500  "></i>
+            <div 
+            onClick={()=> scrollref.current?.scrollBy({left: 200, behavior: 'smooth'})}
+            className="bg-gradient-to-b from-[#303439] to-[#161718] rounded-full w-[45px] h-[45px] flex items-center justify-center shadow-[-5px_-3px_30px_-10px_#96BEE7,4px_4px_30px_5px_#101213]">
+              <i className="bi bi-arrow-right text-gray-500 cursor-pointer "></i>
             </div>
           </div>
           </div>
         </div>
 
-        <div className='mt-[48px] overflow-x-auto  hide-scrollbar px-5 '>
+        <div ref={scrollref} className='mt-[48px] overflow-x-auto  hide-scrollbar px-5 '>
           {/* images */}
           <div className='flex gap-[16px] w-max items-center justify-center mx-auto'>
             {
