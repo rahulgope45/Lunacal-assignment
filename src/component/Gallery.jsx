@@ -10,8 +10,12 @@ const [images, setImages] = useState([
   
 ]);
 
-const addImage = () =>{
-  setImages([...images, `/img${images.length +1}.png`])
+const handleFileChange = (e)=>{
+  const file= e.target.files[0];
+  if(file){
+    const imgUrl = URL.createObjectURL(file);
+    setImages([...images, imgUrl]);
+  }
 };
 
 
@@ -44,9 +48,14 @@ const addImage = () =>{
             {/* Add Button */}
           <div className="w-[137px] h-[47px] bg-[#363C43] shadow-[5px_5px_5px_rgba(0,0,0,0.9)] rounded-[23px] flex items-center justify-center gap-2">
             <i className="bi bi-plus text-white"></i>
-            <button 
-            onClick={() => addImage()}
-            className="cursor-pointer text-white">Add</button>
+            <label htmlFor="file-upload" className="cursor-pointer text-white z-10">Add</label>
+            <input 
+            id='file-upload'
+            type='file'
+            accept='image/*'
+            onChange={handleFileChange}
+            className='hidden '
+            />
           </div>
 
           {/* Arrows */}
