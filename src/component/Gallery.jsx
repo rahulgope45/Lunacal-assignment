@@ -71,7 +71,7 @@ const addImage = () =>{
                 key={index}
                 src={src}
                 alt={`Gallary ${index}`}
-                className='w-[191px] h-[180px] rounded-[24px] object-cover  '
+                className='w-[191px] h-[180px] rounded-[24px] object-fill filter grayscale hover:grayscale-0 transition-transform duration-500 ease-in-out hover:scale-[1.05] hover:-rotate-2 hover:-translate-y-2'
                 />
               )
                 
