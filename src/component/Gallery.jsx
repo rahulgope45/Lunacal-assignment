@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 function Gallery() {
+
+const [images, setImages] = useState([
+  "/main.png",
+  "/main.png",
+  "/main.png",
+  
+]);
+
+const addImage = () =>{
+  setImages([...images, `/img${images.length +1}.png`])
+};
+
+
   return (
-    <div className={`bg-[#363C43]  from-[#4A4E54] to-[#1b1c1e] w-[720px] h-[330px] rounded-[23px]  shadow-[5px_5px_5px_rgba(0,0,0,0.9)] relative ml-3 mt-[40px]`}>
+    <div className={`bg-[#363C43]  from-[#4A4E54] to-[#1b1c1e] w-[720px] h-[330px] rounded-[23px]  shadow-[5px_5px_5px_rgba(0,0,0,0.9)] relative ml-3 mt-[40px] mb-4`}>
 
       {/*placing all the icons here  */}
       <img
@@ -31,7 +44,9 @@ function Gallery() {
             {/* Add Button */}
           <div className="w-[137px] h-[47px] bg-[#363C43] shadow-[5px_5px_5px_rgba(0,0,0,0.9)] rounded-[23px] flex items-center justify-center gap-2">
             <i className="bi bi-plus text-white"></i>
-            <button className="cursor-pointer text-white">Add</button>
+            <button 
+            onClick={() => addImage()}
+            className="cursor-pointer text-white">Add</button>
           </div>
 
           {/* Arrows */}
@@ -46,8 +61,25 @@ function Gallery() {
           </div>
         </div>
 
-        <div>
+        <div className='mt-[48px] overflow-x-auto px-5 '>
           {/* images */}
+          <div className='flex gap-[16px] w-max items-center justify-center mx-auto'>
+            {
+              images.map((src,index) =>{
+              return  (
+                <img
+                key={index}
+                src={src}
+                alt={`Gallary ${index}`}
+                className='w-[191px] h-[180px] rounded-[24px] object-cover  '
+                />
+              )
+                
+              })
+            }
+
+          </div>
+
         </div>
       </div>
 
